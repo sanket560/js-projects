@@ -4,11 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Number guessing</title>
 </head>
 <body>
     <div class="container">
-        
+        <h2 class="head">Enter Your Number Between 1 - 10</h2>
+        <div class="flex">
+            <input placeholder="1,2,3,4,5,6,7,8,9,10" id="usernum">
+            <button id="btn" onclick="submit()">Submit</button>
+        </div>
+        <hr>
+        <h2 class="head">Is This Your Number ?</h2>
+        <div class="guessedNumber">
+            <h2 class="guessednum" id="guessednum">
+                ?
+            </h2>
+            <button class="no" id="no" onclick=window.location.reload();>No</button>
+            <button class="yes" id ="yes" onclick="yes()">Yes</button>
+        </div>
+        <hr>
+        <div id="congrats">
+            <!-- if yes Yeah!! I am Intelligent -->
+        </div>
     </div>
+<script src="main.js"></script>
 </body>
 </html>
