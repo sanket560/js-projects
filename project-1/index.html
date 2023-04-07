@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb switch</title>
+    <style>
+        body{
+            background-color: #020305;
+        }
+        img{
+            width: 350px;
+            height: 500px;
+        }
+        .container{
+            width: 20%;
+            margin: auto;
+        }
+        .container button{
+            padding: 10px;
+            width: 100px;
+            margin-top: 40px;
+            margin-left: 35%;
+            cursor: pointer;
+            border: none;
+        }
+        .container button:hover{
+            background-color: lightgreen;
+            color: #020305;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="bulbimg" src="img/off.jpg" alt="">
+        <button id="switchBtn">Switch on</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

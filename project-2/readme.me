@@ -1,0 +1,56 @@
+// const addbtn = document.getElementById('add_btn');
+// // accessing button with separate var
+// addbtn.addEventListener('click', addTask);
+// // creating eventlistner on button var "addbtn" bcz there will be event going to occur
+// // which is onclick
+
+// let parentlist = document.getElementById('parent');
+// // accessing parent which ul element we have created this outside because we cant to access this var
+// // another function too
+
+// // creating function which addtask to list
+// function addTask(e) {
+//     if(parentlist.children[0].classList == 'newMsgClass'){ 
+//         // this will check that parentlist mins ul element ka jo 0th position pai child hai jiska class name newMsgClass hai hoga
+//         parentlist.children[0].remove();
+//         //parentlist mins ul element ke 0th index ke child ko remove karo which is our msg
+//     }
+//     let currentbtn = e.currentTarget;
+//     // here we capture the button when user click on add button it will tigger to currentTarget method
+//     // through default parameter
+//     let currentinput = currentbtn.previousElementSibling;
+//     // then here we access previous element element sibling which in of add button which is input
+//     // and it will get store in currentinput
+//     let currenTask = currentinput.value;
+//     // then currentTask will take input form which is store in currentinput and it will store his value
+
+
+//     // once we get new task we will add in our ul element with new li element
+//     let newli = document.createElement('li');
+//     // this will create new li element 
+//     newli.className = "list-group-item bg-dark text-light d-flex justify-content-between"
+//     // and in that new li we will ad class name to li element
+//     newli.innerHTML = `
+//                 <span class="flex-grow-1">${currenTask}</span> 
+//                 <button class="mx-3 bg-warning text-white border-0 px-3">edit</button>
+//                 <button class="bg-danger text-white border-0 px-3" onclick="removetask(this)">remove</button>
+//     `
+//     //and here we add all element which we want to add in li element
+
+//     // at the end we add that new li in parentlist mins in ul element
+//     parentlist.append(newli)
+
+// }
+
+// // this function is for removing current task
+// function removetask(curtask){
+    
+//     curtask.parentElement.remove();
+
+//     if(parentlist.children.length <= 0){ // agar ul ke jo li child ki lenght 0 ya 0 se kam ho to
+//         let newMsg = document.createElement('h3'); // this will create new element which is h3
+//         newMsg.classList = "newMsgClass" //giving class name to h3 element
+//         newMsg.textContent = " no task yet created" // this will add text in h3
+//         parentlist.appendChild(newMsg)//this will add this new element in ul element
+//     }
+// }
