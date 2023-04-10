@@ -6,3 +6,4 @@ If any issue in any code feel free to reach out to me
 <h3>2. To-do list </h3>
 <h3>3. number guessing<h3>
 <h3>4. Counter </h3>
+<h3>5. Calculator</h3>
