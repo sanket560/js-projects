@@ -1,48 +1,40 @@
-// Initialize the input value to an empty string
-let inputvalues = '';
+// Initialize an empty string to store the input values
+let string = '';
 
-// Select all elements with an id of "button"
-const buttons = document.querySelectorAll('#button');
+// Get the input element by ID
+const inputvalue = document.getElementById('inputvalue');
 
-// Loop through each button element
-// This line converts the buttons NodeList into an array, 
-// and then loops through each element using the forEach method.
-Array.from(buttons).forEach((button)=>{
+// Get all the buttons by class name
+const allbutton = document.getElementsByClassName('button');
 
-  // Attach a click event listener to each button
-  button.addEventListener('click',(e)=>{
-
-    // Check if the clicked button is the equals sign
-    if(e.target.innerHTML == '='){
-
-      // Evaluate the expression stored in inputvalues
-      inputvalues = eval(inputvalues);
-
-      // Set the value of the input element to the result
-      document.querySelector('input').value = inputvalues;
-
-    }
-
-    // Check if the clicked button is the clear button
-    else if(e.target.innerHTML == 'C'){
-
-      // Set the input value to an empty string
-      inputvalues = '';
-
-      // Set the value of the input element to an empty string
-      document.querySelector('input').value = inputvalues;
-
-    }
-
-    // If neither of the above conditions are met
-    else{
-
-      // Concatenate the clicked button's innerHTML with the current input value
-      inputvalues = inputvalues + e.target.innerHTML;
-
-      // Set the value of the input element to the concatenated string
-      document.querySelector('input').value = inputvalues;
-
-    }
-  });
+// Convert the collection of buttons to an array using Array.from()
+// This allows us to use Array methods like forEach() to loop through the buttons
+Array.from(allbutton).forEach(function(button) {
+    button.addEventListener('click', function(e) {
+        // If the button is the equals sign, evaluate the expression
+        if (e.target.innerHTML == '=') {
+            string = eval(string);
+            inputvalue.value = string;
+        }
+        // If the button is the clear button, reset the input string
+        else if (e.target.innerHTML == 'C') {
+            string = '';
+            inputvalue.value = string;
+        }
+        // If the button is a number or operator, append it to the input string
+        else {
+            string = string + e.target.innerHTML;
+            inputvalue.value = string;
+        }
+    });
 });
+
+
+/*note: In this code, Array.from(allbutton) is used to convert the allbutton 
+collection returned by getElementsByClassName() into an array,
+ so that we can use the forEach() method to loop through each 
+ button and add event listeners to them. Without converting 
+ the collection to an array, we would not be able to use f
+ orEach(), because it is not a method of the HTMLCollection 
+ interface returned by getElementsByClassName()
+*/
